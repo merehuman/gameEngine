@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{ED602E5D-031C-4AF8-B6A6-4B34E0073B27}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Converter</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+    <Import Project="..\Framework\Framework.vcxitems" Label="Shared" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <CodeAnalysisRuleSet>CppCoreCheckConstRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;PESSAC;WINDOWS_TARGET_PLATFORM="$(TargetPlatformVersion)";SOLUTION_DIR=R"($(SolutionDir))";TOOLS_VERSION=R"($(VCToolsVersion))";LOCAL_WORKING_DIR=R"($(LocalDebuggerWorkingDirectory))";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)Framework;$(SolutionDir)Proto;$(SolutionDir)Proto\absl;$(SolutionDir)Proto\utf8_range;$(SolutionDir)Converter;$(SolutionDir)GLTF\include;$(SolutionDir)File\include;$(SolutionDir)Protobuf;$(SolutionDir)Math\include;$(SolutionDir)PugiXml\include</AdditionalIncludeDirectories>
+      <WarningVersion>
+      </WarningVersion>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <PrecompiledHeaderOutputFile />
+      <ForcedIncludeFiles>Framework.h</ForcedIncludeFiles>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <EnablePREfast>false</EnablePREfast>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PreprocessToFile>false</PreprocessToFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+    </Link>
+    <PreBuildEvent>
+      <Command>copy "$(SolutionDir)OriginalData\*.png" "$(SolutionDir)Data";
+copy "$(SolutionDir)OriginalData\*.tga" "$(SolutionDir)Data";
+copy "$(SolutionDir)OriginalData\*.glb" "$(SolutionDir)Data";
+copy "$(SolutionDir)OriginalData\*.xml" "$(SolutionDir)Data";</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;PESSAC;WINDOWS_TARGET_PLATFORM="$(TargetPlatformVersion)";SOLUTION_DIR=R"($(SolutionDir))";TOOLS_VERSION=R"($(VCToolsVersion))";LOCAL_WORKING_DIR=R"($(LocalDebuggerWorkingDirectory))";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)Framework;$(SolutionDir)Proto;$(SolutionDir)Proto\absl;$(SolutionDir)Proto\utf8_range;$(SolutionDir)Converter</AdditionalIncludeDirectories>
+      <WarningVersion>
+      </WarningVersion>
+      <PrecompiledHeaderOutputFile />
+      <ForcedIncludeFiles>Framework.h</ForcedIncludeFiles>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+    <PreBuildEvent>
+      <Command>"$(SolutionDir)Proto\tools\release\protoc.exe" --cpp_out=.\..\Converter --proto_path=.\..\Converter .\..\Converter\*.proto</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>rem copy "$(SolutionDir)\Proto\libs\release\*.dll" "$(SolutionDir)Release\."</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\GLTF\include\json.hpp" />
+    <ClInclude Include="..\GLTF\include\stb_image.h" />
+    <ClInclude Include="..\GLTF\include\stb_image_write.h" />
+    <ClInclude Include="..\GLTF\include\tiny_gltf.h" />
+    <ClInclude Include="..\PugiXml\include\pugixml.hpp" />
+    <ClInclude Include="Anim.h" />
+    <ClInclude Include="BoundingSphere.h" />
+    <ClInclude Include="ConvertAnim.h" />
+    <ClInclude Include="ConvertHierarchy.h" />
+    <ClInclude Include="ConvertJoint.h" />
+    <ClInclude Include="ConvertMesh.h" />
+    <ClInclude Include="ConvertSkeleton.h" />
+    <ClInclude Include="ConvertSkin.h" />
+    <ClInclude Include="ConvertXML.h" />
+    <ClInclude Include="CreateTexture.h" />
+    <ClInclude Include="CubeMesh.h" />
+    <ClInclude Include="GLTF.h" />
+    <ClInclude Include="GLTF_Helper.h" />
+    <ClInclude Include="md5.h" />
+    <ClInclude Include="meshDataConverter.h" />
+    <ClInclude Include="PyramidMesh.h" />
+    <ClInclude Include="Skeleton.h" />
+    <ClInclude Include="SphereMesh.h" />
+    <ClInclude Include="SpriteMesh.h" />
+    <ClInclude Include="textureDataConverter.h" />
+    <ClInclude Include="vboDataConverter.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\GLTF\libs\debug\tinygltf.lib" />
+    <Library Include="..\Proto\libs\debug\absl_bad_any_cast_impl.lib" />
+    <Library Include="..\Proto\libs\debug\absl_bad_optional_access.lib" />
+    <Library Include="..\Proto\libs\debug\absl_bad_variant_access.lib" />
+    <Library Include="..\Proto\libs\debug\absl_base.lib" />
+    <Library Include="..\Proto\libs\debug\absl_city.lib" />
+    <Library Include="..\Proto\libs\debug\absl_civil_time.lib" />
+    <Library Include="..\Proto\libs\debug\absl_cord.lib" />
+    <Library Include="..\Proto\libs\debug\absl_cordz_functions.lib" />
+    <Library Include="..\Proto\libs\debug\absl_cordz_handle.lib" />
+    <Library Include="..\Proto\libs\debug\absl_cordz_info.lib" />
+    <Library Include="..\Proto\libs\debug\absl_cordz_sample_token.lib" />
+    <Library Include="..\Proto\libs\debug\absl_cord_internal.lib" />
+    <Library Include="..\Proto\libs\debug\absl_crc32c.lib" />
+    <Library Include="..\Proto\libs\debug\absl_crc_cord_state.lib" />
+    <Library Include="..\Proto\libs\debug\absl_crc_cpu_detect.lib" />
+    <Library Include="..\Proto\libs\debug\absl_crc_internal.lib" />
+    <Library Include="..\Proto\libs\debug\absl_debugging_internal.lib" />
+    <Library Include="..\Proto\libs\debug\absl_decode_rust_punycode.lib" />
+    <Library Include="..\Proto\libs\debug\absl_demangle_internal.lib" />
+    <Library Include="..\Proto\libs\debug\absl_demangle_rust.lib" />
+    <Library Include="..\Proto\libs\debug\absl_die_if_null.lib" />
+    <Library Include="..\Proto\libs\debug\absl_examine_stack.lib" />
+    <Library Include="..\Proto\libs\debug\absl_exponential_biased.lib" />
+    <Library Include="..\Proto\libs\debug\absl_failure_signal_handler.lib" />
+    <Library Include="..\Proto\libs\debug\absl_flags_commandlineflag.lib" />
+    <Library Include="..\Proto\libs\debug\absl_flags_commandlineflag_internal.lib" />
+    <Library Include="..\Proto\libs\debug\absl_flags_config.lib" />
+    <Library Include="..\Proto\libs\debug\absl_flags_internal.lib" />
+    <Library Include="..\Proto\libs\debug\absl_flags_marshalling.lib" />
+    <Library Include="..\Proto\libs\debug\absl_flags_parse.lib" />
+    <Library Include="..\Proto\libs\debug\absl_flags_private_handle_accessor.lib" />
+    <Library Include="..\Proto\libs\debug\absl_flags_program_name.lib" />
+    <Library Include="..\Proto\libs\debug\absl_flags_reflection.lib" />
+    <Library Include="..\Proto\libs\debug\absl_flags_usage.lib" />
+    <Library Include="..\Proto\libs\debug\absl_flags_usage_internal.lib" />
+    <Library Include="..\Proto\libs\debug\absl_graphcycles_internal.lib" />
+    <Library Include="..\Proto\libs\debug\absl_hash.lib" />
+    <Library Include="..\Proto\libs\debug\absl_hashtablez_sampler.lib" />
+    <Library Include="..\Proto\libs\debug\absl_int128.lib" />
+    <Library Include="..\Proto\libs\debug\absl_kernel_timeout_internal.lib" />
+    <Library Include="..\Proto\libs\debug\absl_leak_check.lib" />
+    <Library Include="..\Proto\libs\debug\absl_log_entry.lib" />
+    <Library Include="..\Proto\libs\debug\absl_log_flags.lib" />
+    <Library Include="..\Proto\libs\debug\absl_log_globals.lib" />
+    <Library Include="..\Proto\libs\debug\absl_log_initialize.lib" />
+    <Library Include="..\Proto\libs\debug\absl_log_internal_check_op.lib" />
+    <Library Include="..\Proto\libs\debug\absl_log_internal_conditions.lib" />
+    <Library Include="..\Proto\libs\debug\absl_log_internal_fnmatch.lib" />
+    <Library Include="..\Proto\libs\debug\absl_log_internal_format.lib" />
+    <Library Include="..\Proto\libs\debug\absl_log_internal_globals.lib" />
+    <Library Include="..\Proto\libs\debug\absl_log_internal_log_sink_set.lib" />
+    <Library Include="..\Proto\libs\debug\absl_log_internal_message.lib" />
+    <Library Include="..\Proto\libs\debug\absl_log_internal_nullguard.lib" />
+    <Library Include="..\Proto\libs\debug\absl_log_internal_proto.lib" />
+    <Library Include="..\Proto\libs\debug\absl_log_severity.lib" />
+    <Library Include="..\Proto\libs\debug\absl_log_sink.lib" />
+    <Library Include="..\Proto\libs\debug\absl_low_level_hash.lib" />
+    <Library Include="..\Proto\libs\debug\absl_malloc_internal.lib" />
+    <Library Include="..\Proto\libs\debug\absl_periodic_sampler.lib" />
+    <Library Include="..\Proto\libs\debug\absl_poison.lib" />
+    <Library Include="..\Proto\libs\debug\absl_random_distributions.lib" />
+    <Library Include="..\Proto\libs\debug\absl_random_internal_distribution_test_util.lib" />
+    <Library Include="..\Proto\libs\debug\absl_random_internal_platform.lib" />
+    <Library Include="..\Proto\libs\debug\absl_random_internal_pool_urbg.lib" />
+    <Library Include="..\Proto\libs\debug\absl_random_internal_randen.lib" />
+    <Library Include="..\Proto\libs\debug\absl_random_internal_randen_hwaes.lib" />
+    <Library Include="..\Proto\libs\debug\absl_random_internal_randen_hwaes_impl.lib" />
+    <Library Include="..\Proto\libs\debug\absl_random_internal_randen_slow.lib" />
+    <Library Include="..\Proto\libs\debug\absl_random_internal_seed_material.lib" />
+    <Library Include="..\Proto\libs\debug\absl_random_seed_gen_exception.lib" />
+    <Library Include="..\Proto\libs\debug\absl_random_seed_sequences.lib" />
+    <Library Include="..\Proto\libs\debug\absl_raw_hash_set.lib" />
+    <Library Include="..\Proto\libs\debug\absl_raw_logging_internal.lib" />
+    <Library Include="..\Proto\libs\debug\absl_scoped_set_env.lib" />
+    <Library Include="..\Proto\libs\debug\absl_spinlock_wait.lib" />
+    <Library Include="..\Proto\libs\debug\absl_stacktrace.lib" />
+    <Library Include="..\Proto\libs\debug\absl_status.lib" />
+    <Library Include="..\Proto\libs\debug\absl_statusor.lib" />
+    <Library Include="..\Proto\libs\debug\absl_strerror.lib" />
+    <Library Include="..\Proto\libs\debug\absl_strings.lib" />
+    <Library Include="..\Proto\libs\debug\absl_strings_internal.lib" />
+    <Library Include="..\Proto\libs\debug\absl_string_view.lib" />
+    <Library Include="..\Proto\libs\debug\absl_str_format_internal.lib" />
+    <Library Include="..\Proto\libs\debug\absl_symbolize.lib" />
+    <Library Include="..\Proto\libs\debug\absl_synchronization.lib" />
+    <Library Include="..\Proto\libs\debug\absl_throw_delegate.lib" />
+    <Library Include="..\Proto\libs\debug\absl_time.lib" />
+    <Library Include="..\Proto\libs\debug\absl_time_zone.lib" />
+    <Library Include="..\Proto\libs\debug\absl_utf8_for_code_point.lib" />
+    <Library Include="..\Proto\libs\debug\absl_vlog_config_internal.lib" />
+    <Library Include="..\Proto\libs\debug\libprotobuf-lited.lib" />
+    <Library Include="..\Proto\libs\debug\utf8_range.lib" />
+    <Library Include="..\Proto\libs\debug\utf8_validity.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\GLTF\src\tiny_gltf.cc" />
+    <ClCompile Include="..\PugiXml\src\pugixml.cpp" />
+    <ClCompile Include="Anim.cpp" />
+    <ClCompile Include="BoundingSphere.cpp" />
+    <ClCompile Include="ConvertAnim.cpp" />
+    <ClCompile Include="ConvertHierarchy.cpp" />
+    <ClCompile Include="ConvertJoint.cpp" />
+    <ClCompile Include="ConvertMesh.cpp" />
+    <ClCompile Include="ConvertSkeleton.cpp" />
+    <ClCompile Include="ConvertSkin.cpp" />
+    <ClCompile Include="ConvertXML.cpp" />
+    <ClCompile Include="CreateTexture.cpp" />
+    <ClCompile Include="CubeMesh.cpp" />
+    <ClCompile Include="GLTF.cpp" />
+    <ClCompile Include="GLTF_Helper.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="md5.cpp" />
+    <ClCompile Include="meshDataConverter.cpp" />
+    <ClCompile Include="PyramidMesh.cpp" />
+    <ClCompile Include="Skeleton.cpp" />
+    <ClCompile Include="SphereMesh.cpp" />
+    <ClCompile Include="SpriteMesh.cpp" />
+    <ClCompile Include="textureDataConverter.cpp" />
+    <ClCompile Include="vboDataConverter.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\File\File.vcxproj">
+      <Project>{c5702f9d-c1b9-4338-94ed-e8accfe1b808}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Math\Math.vcxproj">
+      <Project>{d999076e-f08b-48fc-b732-e43e13041a07}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Protobuf\Protobuf.vcxproj">
+      <Project>{d1aa91ea-5587-49a9-8124-8b87554cdc5a}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Proto\Proto.vcxproj">
+      <Project>{c44454a3-504e-4df7-8a6a-4db16965984e}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Proto\libs\debug\absl_bad_any_cast_impl.pdb" />
+    <None Include="..\Proto\libs\debug\absl_bad_optional_access.pdb" />
+    <None Include="..\Proto\libs\debug\absl_bad_variant_access.pdb" />
+    <None Include="..\Proto\libs\debug\absl_base.pdb" />
+    <None Include="..\Proto\libs\debug\absl_city.pdb" />
+    <None Include="..\Proto\libs\debug\absl_civil_time.pdb" />
+    <None Include="..\Proto\libs\debug\absl_cord.pdb" />
+    <None Include="..\Proto\libs\debug\absl_cordz_functions.pdb" />
+    <None Include="..\Proto\libs\debug\absl_cordz_handle.pdb" />
+    <None Include="..\Proto\libs\debug\absl_cordz_info.pdb" />
+    <None Include="..\Proto\libs\debug\absl_cordz_sample_token.pdb" />
+    <None Include="..\Proto\libs\debug\absl_cord_internal.pdb" />
+    <None Include="..\Proto\libs\debug\absl_crc32c.pdb" />
+    <None Include="..\Proto\libs\debug\absl_crc_cord_state.pdb" />
+    <None Include="..\Proto\libs\debug\absl_crc_cpu_detect.pdb" />
+    <None Include="..\Proto\libs\debug\absl_crc_internal.pdb" />
+    <None Include="..\Proto\libs\debug\absl_debugging_internal.pdb" />
+    <None Include="..\Proto\libs\debug\absl_decode_rust_punycode.pdb" />
+    <None Include="..\Proto\libs\debug\absl_demangle_internal.pdb" />
+    <None Include="..\Proto\libs\debug\absl_demangle_rust.pdb" />
+    <None Include="..\Proto\libs\debug\absl_die_if_null.pdb" />
+    <None Include="..\Proto\libs\debug\absl_examine_stack.pdb" />
+    <None Include="..\Proto\libs\debug\absl_exponential_biased.pdb" />
+    <None Include="..\Proto\libs\debug\absl_failure_signal_handler.pdb" />
+    <None Include="..\Proto\libs\debug\absl_flags_commandlineflag.pdb" />
+    <None Include="..\Proto\libs\debug\absl_flags_commandlineflag_internal.pdb" />
+    <None Include="..\Proto\libs\debug\absl_flags_config.pdb" />
+    <None Include="..\Proto\libs\debug\absl_flags_internal.pdb" />
+    <None Include="..\Proto\libs\debug\absl_flags_marshalling.pdb" />
+    <None Include="..\Proto\libs\debug\absl_flags_parse.pdb" />
+    <None Include="..\Proto\libs\debug\absl_flags_private_handle_accessor.pdb" />
+    <None Include="..\Proto\libs\debug\absl_flags_program_name.pdb" />
+    <None Include="..\Proto\libs\debug\absl_flags_reflection.pdb" />
+    <None Include="..\Proto\libs\debug\absl_flags_usage.pdb" />
+    <None Include="..\Proto\libs\debug\absl_flags_usage_internal.pdb" />
+    <None Include="..\Proto\libs\debug\absl_graphcycles_internal.pdb" />
+    <None Include="..\Proto\libs\debug\absl_hash.pdb" />
+    <None Include="..\Proto\libs\debug\absl_hashtablez_sampler.pdb" />
+    <None Include="..\Proto\libs\debug\absl_int128.pdb" />
+    <None Include="..\Proto\libs\debug\absl_kernel_timeout_internal.pdb" />
+    <None Include="..\Proto\libs\debug\absl_leak_check.pdb" />
+    <None Include="..\Proto\libs\debug\absl_log_entry.pdb" />
+    <None Include="..\Proto\libs\debug\absl_log_flags.pdb" />
+    <None Include="..\Proto\libs\debug\absl_log_globals.pdb" />
+    <None Include="..\Proto\libs\debug\absl_log_initialize.pdb" />
+    <None Include="..\Proto\libs\debug\absl_log_internal_check_op.pdb" />
+    <None Include="..\Proto\libs\debug\absl_log_internal_conditions.pdb" />
+    <None Include="..\Proto\libs\debug\absl_log_internal_fnmatch.pdb" />
+    <None Include="..\Proto\libs\debug\absl_log_internal_format.pdb" />
+    <None Include="..\Proto\libs\debug\absl_log_internal_globals.pdb" />
+    <None Include="..\Proto\libs\debug\absl_log_internal_log_sink_set.pdb" />
+    <None Include="..\Proto\libs\debug\absl_log_internal_message.pdb" />
+    <None Include="..\Proto\libs\debug\absl_log_internal_nullguard.pdb" />
+    <None Include="..\Proto\libs\debug\absl_log_internal_proto.pdb" />
+    <None Include="..\Proto\libs\debug\absl_log_severity.pdb" />
+    <None Include="..\Proto\libs\debug\absl_log_sink.pdb" />
+    <None Include="..\Proto\libs\debug\absl_low_level_hash.pdb" />
+    <None Include="..\Proto\libs\debug\absl_malloc_internal.pdb" />
+    <None Include="..\Proto\libs\debug\absl_periodic_sampler.pdb" />
+    <None Include="..\Proto\libs\debug\absl_poison.pdb" />
+    <None Include="..\Proto\libs\debug\absl_random_distributions.pdb" />
+    <None Include="..\Proto\libs\debug\absl_random_internal_distribution_test_util.pdb" />
+    <None Include="..\Proto\libs\debug\absl_random_internal_platform.pdb" />
+    <None Include="..\Proto\libs\debug\absl_random_internal_pool_urbg.pdb" />
+    <None Include="..\Proto\libs\debug\absl_random_internal_randen.pdb" />
+    <None Include="..\Proto\libs\debug\absl_random_internal_randen_hwaes.pdb" />
+    <None Include="..\Proto\libs\debug\absl_random_internal_randen_hwaes_impl.pdb" />
+    <None Include="..\Proto\libs\debug\absl_random_internal_randen_slow.pdb" />
+    <None Include="..\Proto\libs\debug\absl_random_internal_seed_material.pdb" />
+    <None Include="..\Proto\libs\debug\absl_random_seed_gen_exception.pdb" />
+    <None Include="..\Proto\libs\debug\absl_random_seed_sequences.pdb" />
+    <None Include="..\Proto\libs\debug\absl_raw_hash_set.pdb" />
+    <None Include="..\Proto\libs\debug\absl_raw_logging_internal.pdb" />
+    <None Include="..\Proto\libs\debug\absl_scoped_set_env.pdb" />
+    <None Include="..\Proto\libs\debug\absl_spinlock_wait.pdb" />
+    <None Include="..\Proto\libs\debug\absl_stacktrace.pdb" />
+    <None Include="..\Proto\libs\debug\absl_status.pdb" />
+    <None Include="..\Proto\libs\debug\absl_statusor.pdb" />
+    <None Include="..\Proto\libs\debug\absl_strerror.pdb" />
+    <None Include="..\Proto\libs\debug\absl_strings.pdb" />
+    <None Include="..\Proto\libs\debug\absl_strings_internal.pdb" />
+    <None Include="..\Proto\libs\debug\absl_string_view.pdb" />
+    <None Include="..\Proto\libs\debug\absl_str_format_internal.pdb" />
+    <None Include="..\Proto\libs\debug\absl_symbolize.pdb" />
+    <None Include="..\Proto\libs\debug\absl_synchronization.pdb" />
+    <None Include="..\Proto\libs\debug\absl_throw_delegate.pdb" />
+    <None Include="..\Proto\libs\debug\absl_time.pdb" />
+    <None Include="..\Proto\libs\debug\absl_time_zone.pdb" />
+    <None Include="..\Proto\libs\debug\absl_utf8_for_code_point.pdb" />
+    <None Include="..\Proto\libs\debug\absl_vlog_config_internal.pdb" />
+    <None Include="..\Proto\libs\debug\libprotobuf-lited.pdb" />
+    <None Include="..\Proto\libs\debug\utf8_range.pdb" />
+    <None Include="..\Proto\libs\debug\utf8_validity.pdb" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

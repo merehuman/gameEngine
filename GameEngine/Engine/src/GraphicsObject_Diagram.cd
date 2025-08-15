@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Azul::GameObject">
+    <Position X="1.5" Y="2.5" Width="1.5" />
+    <Members>
+      <Method Name="~GameObject" Hidden="true" />
+      <Method Name="GameObject" Hidden="true" />
+      <Method Name="operator=" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ABQAQAAAAAAgAkAAAARAAAAAABAAAAAAAAAhEAIAAAA=</HashCode>
+      <FileName>src\GameObject.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="poGraphicsObject" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Azul::GraphicsObject">
+    <Position X="4.5" Y="2.75" Width="2.25" />
+    <Members>
+      <Method Name="~GraphicsObject" Hidden="true" />
+      <Method Name="GetWorld" Hidden="true" />
+      <Method Name="GraphicsObject" Hidden="true" />
+      <Method Name="operator=" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABBAAAAAYABAgAAAAAAAAAABAhEAAAAAA=</HashCode>
+      <FileName>src\GraphicsObject.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="pMesh" />
+      <Field Name="pShaderObj" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Azul::ShaderObject">
+    <Position X="8" Y="4.25" Width="2" />
+    <Members>
+      <Method Name="~ShaderObject" Hidden="true" />
+      <Method Name="GetLatestProfile_PixelShader" Hidden="true" />
+      <Method Name="GetLatestProfile_VertexShader" Hidden="true" />
+      <Method Name="GetName" Hidden="true" />
+      <Method Name="operator=" Hidden="true" />
+      <Method Name="SetName" Hidden="true" />
+      <Method Name="ShaderObject" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Azul::ShaderObject::Name" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>src\ShaderObject.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAQQCAAiAAAAAAAAEQAAAAAAgQCEABAA=</HashCode>
+      <FileName>src\ShaderObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Azul::GraphicsObject_Abstract">
+    <Position X="4.5" Y="0.5" Width="2.25" />
+    <Members>
+      <Method Name="~GraphicsObject_Abstract" Hidden="true" />
+      <Method Name="GraphicsObject_Abstract" Hidden="true" />
+      <Method Name="operator=" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AJAABAAAABAAAgAAAAAAAAAAAAAAAAQAAAAgAAAAAAA=</HashCode>
+      <FileName>src\GraphicsObject_Abstract.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Azul::Mesh" Collapsed="true">
+    <Position X="8" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAUAAAAAgAAEAAAAAAAEQAAAAQBgQAAABAA=</HashCode>
+      <FileName>src\Mesh.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Azul::BufferCBV">
+    <Position X="12" Y="7" Width="1.5" />
+    <Members>
+      <Method Name="~BufferCBV" Hidden="true" />
+      <Method Name="BufferCBV" Hidden="true" />
+      <Method Name="operator=" Hidden="true" />
+      <Method Name="privCreate" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAIgAAQgAAAAAAAAAAAAgAIAUAAA=</HashCode>
+      <FileName>src\BufferCBV.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="poBufferCBV" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Azul::GraphicsObject_LightTexture">
+    <Position X="4.5" Y="5.5" Width="2.25" />
+    <Members>
+      <Method Name="~GraphicsObject_LightTexture" Hidden="true" />
+      <Method Name="GraphicsObject_LightTexture" Hidden="true" />
+      <Method Name="operator=" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AIAABAAAgDAAEgAAAAAAAAAAAAAAAAABAAAgQAAAAAA=</HashCode>
+      <FileName>src\GraphicsObject_LightTexture.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Azul::ShaderObject_LightTexture">
+    <Position X="8" Y="7" Width="2" />
+    <Members>
+      <Method Name="~ShaderObject_LightTexture" Hidden="true" />
+      <Method Name="operator=" Hidden="true" />
+      <Method Name="ShaderObject_LightTexture" Hidden="true" />
+    </Members>
+    <AssociationLine Name="ConstantBuff_View" Type="Azul::BufferCBV" FixedFromPoint="true">
+      <Path>
+        <Point X="10" Y="8.281" />
+        <Point X="12" Y="8.281" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAEAAAACQAAAAQQCAACAAFAAAAAAAAAgAAQgAgBAIAA=</HashCode>
+      <FileName>src\ShaderObject_LightTexture.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="ConstantBuff_Projection" />
+      <Field Name="ConstantBuff_World" />
+      <Field Name="ConstantBuff_View" />
+      <Field Name="ConstantBuff_LightPos" />
+    </ShowAsAssociation>
+  </Class>
+  <Struct Name="ID3D11Buffer" Collapsed="true">
+    <Position X="12" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\d3d11.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

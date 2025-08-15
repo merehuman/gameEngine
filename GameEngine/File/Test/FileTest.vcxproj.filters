@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="Close_ERROR.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Close_ERROR_Close.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="GetBaseDir_ERROR_PTR.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="GetBaseDir_ERROR_size.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="GetBaseDir_SUCCESS.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="IsHandleValid_ERROR.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="IsHandleValid_SUCCESS.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Open_NO_Base.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Open_NO_Base_Close.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Open_NO_Base_ERROR_Filename.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Open_NO_Base_ERROR_Open.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Open_USE_Base.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Open_USE_Base_COMBO.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Open_USE_Base_ERROR.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Open_USE_Base_ERROR_Filename.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="SetBaseDir_ERROR_Filename.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="SetBaseDir_ERROR_size.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="SetBaseDir_SUCCESS.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Write_ERROR_Fail.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Write_ERROR_FailBuffer.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Write_ERROR_Read.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Write_ERROR_ReadBuffer.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Write_ERROR_ReadFlush.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Write_ERROR_ReadSeek.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Write_ERROR_ReadTell.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Write_SUCCESS.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Write_SUCCESS_Read.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Write_SUCCESS_Read2.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Write_SUCCESS_ReadFlush.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Write_SUCCESS_ReadSEEK.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Write_SUCCESS_ReadTell.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Test">
+      <UniqueIdentifier>{5d1787fb-1d4f-4711-9dc6-d15f6042b66f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{4bd201f2-ab18-4a85-97d2-1c664581e1df}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="_UnitTestConfiguration.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="__DO NOT MODIFY__">
+      <Filter>Test</Filter>
+    </None>
+  </ItemGroup>
+</Project>

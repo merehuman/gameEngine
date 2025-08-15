@@ -1,0 +1,68 @@
+//----------------------------------------------------------------------------
+// copyright 2025, jessa gillespie, all rights reserved.
+//----------------------------------------------------------------------------
+
+#include "BufferSamplerState_ps.h"
+#include "DirectXDeviceMan.h"
+
+namespace Azul
+{
+
+	BufferSamplerState_ps::BufferSamplerState_ps()
+		: mFilter{D3D11_FILTER_MIN_MAG_MIP_LINEAR},
+		poSampler{nullptr},
+		bCreate{false}
+	{
+	}
+
+	void BufferSamplerState_ps::Initialize(D3D11_FILTER filter)
+	{
+		assert(mFilter = D3D11_FILTER_MIN_MAG_MIP_LINEAR);
+		mFilter = filter;
+		assert(poSampler == nullptr);
+		assert(bCreate == false);
+
+		this->privCreate();
+	}
+
+	void BufferSamplerState_ps::privCreate()
+	{
+		// in case set was called before
+		assert(this->bCreate == false);
+		this->bCreate = true;
+
+		// Create texture
+		HRESULT hr;
+
+		// Create the sample state
+		D3D11_SAMPLER_DESC sampDesc;
+		ZeroMemory(&sampDesc, sizeof(sampDesc));
+		sampDesc.Filter = mFilter;
+		sampDesc.AddressU = D3D11_TEXTURE_ADDRESS_WRAP;
+		sampDesc.AddressV = D3D11_TEXTURE_ADDRESS_WRAP;
+		sampDesc.AddressW = D3D11_TEXTURE_ADDRESS_WRAP;
+		sampDesc.ComparisonFunc = D3D11_COMPARISON_NEVER;
+		sampDesc.MinLOD = 0;
+		sampDesc.MaxLOD = D3D11_FLOAT32_MAX;
+		hr = DirectXDeviceMan::GetDevice()->CreateSamplerState(&sampDesc, &poSampler);
+		assert(SUCCEEDED(hr));
+		assert(poSampler);
+	}
+
+	void BufferSamplerState_ps::SetActive(ShaderSamplerSlot slot)
+	{
+		assert(bCreate == true);
+		DirectXDeviceMan::GetContext()->PSSetSamplers((uint32_t)slot,
+													  1,
+													  &poSampler);
+
+	}
+
+	BufferSamplerState_ps::~BufferSamplerState_ps()
+	{
+		SafeRelease(this->poSampler);
+	}
+
+}
+
+//--- End of File ---

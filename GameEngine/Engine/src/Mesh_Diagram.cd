@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Azul::MeshNodeMan">
+    <Position X="0.75" Y="2.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABIAAAAAAAAAAAAAAAABhAAAAABMAEAgAAAAAAAIAAA=</HashCode>
+      <FileName>src\MeshNodeMan.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Azul::ManBase">
+    <Position X="0.75" Y="1" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>CIAAAIAFAAACgCgAAgAAIgQAUAAIAgAAABAAAAAAAAA=</HashCode>
+      <FileName>C:\code\keenan2024fall_gam575\instructor\Lecture\Week_10\w10(10) AnimController -Skeleton Table\Manager\include\ManBase.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Azul::ListBase" Collapsed="true">
+    <Position X="4" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABCAAAAAAAAAAAAAACBAAAAAAAAAAAAAAgAAAAAAs=</HashCode>
+      <FileName>C:\code\keenan2024fall_gam575\instructor\Lecture\Week_10\w10(10) AnimController -Skeleton Table\Manager\include\ListBase.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Azul::MeshNode" Collapsed="true">
+    <Position X="6.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAACAABhAAAAAAAgAAAAAAAQAAAAABgCAAABAA=</HashCode>
+      <FileName>src\MeshNode.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="poMesh" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Azul::DLink" Collapsed="true">
+    <Position X="6.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAIAAQAAAAABAAIBBBAA=</HashCode>
+      <FileName>C:\code\keenan2024fall_gam575\instructor\Lecture\Week_10\w10(10) AnimController -Skeleton Table\Manager\include\DLink.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Azul::Mesh" Collapsed="true">
+    <Position X="8.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAUAAAAAgAAEAAAAAAAEQAAAAQBgQAAABAA=</HashCode>
+      <FileName>src\Mesh.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Azul::DLinkMan">
+    <Position X="3.75" Y="2.25" Width="2" />
+    <Members>
+      <Method Name="~DLinkMan" Hidden="true" />
+      <Method Name="DLinkMan" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>IAABAAAAAAAAAAAAAAAABgAAAAAABAACAAAgAAAAAAs=</HashCode>
+      <FileName>C:\code\keenan2024fall_gam575\instructor\Lecture\Week_10\w10(10) AnimController -Skeleton Table\Manager\include\DLinkMan.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,210 @@
+//--------------------------------------------------------------
+// copyright 2025, jessa gillespie, all rights reserved.
+//--------------------------------------------------------------
+
+#include "ShaderObject.h"
+#include "Engine.h"
+#include "StringThis.h"
+#include "DirectXDeviceMan.h"
+
+namespace Azul
+{
+	ShaderObject::ShaderObject(ShaderObject::Name _name)
+	:
+	name(_name)
+	{
+	}
+
+	ShaderObject::~ShaderObject()
+	{
+	}
+
+	void ShaderObject::SetName(ShaderObject::Name _name)
+	{
+	this->name = _name;
+	}
+
+	char *ShaderObject::GetName()
+	{
+	// todo - Hack understand why is this needed for print and fix...
+	static char pTmp[128];
+	strcpy_s(pTmp, 128, StringMe(this->name));
+	return pTmp;
+	}
+
+	void ShaderObject::TransferLightPos(Vec3 *pLightPos)
+	{
+	// if you need it it should be overrided in derived object
+	assert(false);
+
+	AZUL_UNUSED_VAR(pLightPos);
+	}
+
+	void ShaderObject::TransferColor(Vec3 *pColor)
+	{
+	// if you need it it should be overrided in derived object
+	assert(false);
+
+	AZUL_UNUSED_VAR(pColor);
+	}
+
+	void ShaderObject::TransferUVCorrection(Mat4 *pUVMatrix)
+	{
+		// if you need it it should be overrided in derived object
+		assert(false);
+
+		AZUL_UNUSED_VAR(pUVMatrix);
+	}
+
+	void ShaderObject::TransferScaleColor(Color *pScaleColor)
+	{
+		// if you need it it should be overrided in derived object
+		assert(false);
+
+		AZUL_UNUSED_VAR(pScaleColor);
+	}
+
+	void ShaderObject::ActivateCBV()
+	{
+		// if you need it it should be overrided in derived object
+		assert(false);
+	}
+	void ShaderObject::TransferWorldViewProj(Camera *pCam, Mat4 *pWorld)
+	{
+		// if you need it it should be overrided in derived object
+		assert(false);
+
+		AZUL_UNUSED_VAR(pCam);
+		AZUL_UNUSED_VAR(pWorld);
+	}
+
+	// -----------------------------------------------------------
+	// Get the latest profile for the specified vertex shader type.
+	// -----------------------------------------------------------
+	const char *ShaderObject::GetLatestProfile_VertexShader()
+	{
+	// Query the current feature level:
+	D3D_FEATURE_LEVEL featureLevel = DirectXDeviceMan::GetDevice()->GetFeatureLevel();
+
+	switch(featureLevel)
+	{
+	case D3D_FEATURE_LEVEL_11_1:
+	case D3D_FEATURE_LEVEL_11_0:
+	{
+		return "vs_5_0";
+	}
+	break;
+
+	case D3D_FEATURE_LEVEL_10_1:
+	{
+		return "vs_4_1";
+	}
+	break;
+
+	case D3D_FEATURE_LEVEL_10_0:
+	{
+		return "vs_4_0";
+	}
+	break;
+
+	case D3D_FEATURE_LEVEL_9_3:
+	{
+		return "vs_4_0_level_9_3";
+	}
+	break;
+
+	case D3D_FEATURE_LEVEL_9_2:
+	case D3D_FEATURE_LEVEL_9_1:
+	{
+		return "vs_4_0_level_9_1";
+	}
+	break;
+
+	default:
+		assert(false);
+
+	}
+
+	return "";
+	}
+
+	// -----------------------------------------------------------
+	// Get the latest profile for the specified pixel shader type.
+	// -----------------------------------------------------------
+	const char *ShaderObject::GetLatestProfile_PixelShader()
+	{
+	// Query the current feature level:
+	D3D_FEATURE_LEVEL featureLevel = DirectXDeviceMan::GetDevice()->GetFeatureLevel();
+	switch(featureLevel)
+	{
+	case D3D_FEATURE_LEVEL_11_1:
+	case D3D_FEATURE_LEVEL_11_0:
+	{
+		return "ps_5_0";
+	}
+	break;
+	case D3D_FEATURE_LEVEL_10_1:
+	{
+		return "ps_4_1";
+	}
+	break;
+	case D3D_FEATURE_LEVEL_10_0:
+	{
+		return "ps_4_0";
+	}
+	break;
+	case D3D_FEATURE_LEVEL_9_3:
+	{
+		return "ps_4_0_level_9_3";
+	}
+	break;
+	case D3D_FEATURE_LEVEL_9_2:
+	case D3D_FEATURE_LEVEL_9_1:
+	{
+		return "ps_4_0_level_9_1";
+	}
+	break;
+	}
+	return "";
+	}
+
+
+	// ---------------------------------------------------------------
+	// Get the latest profile for the specified compute shader type.
+	// ---------------------------------------------------------------
+	const char *ShaderObject::GetLatestProfile_ComputeShader() 
+	{
+		// Query the current feature level:
+		D3D_FEATURE_LEVEL featureLevel = DirectXDeviceMan::GetDevice()->GetFeatureLevel();
+
+		// Prefer higher CS shader profile when possible as CS 5.0 
+		//        provides better performance on 11-class hardware.
+
+		switch(featureLevel)
+		{
+		case D3D_FEATURE_LEVEL_11_1:
+		case D3D_FEATURE_LEVEL_11_0:
+		{
+			return "cs_5_0";
+		}
+		break;
+
+		case D3D_FEATURE_LEVEL_10_1:
+		case D3D_FEATURE_LEVEL_10_0:
+		{
+			return "cs_4_0";
+		}
+		break;
+
+
+		default:
+			assert(false);
+
+		}
+
+		return "";
+	}
+
+}
+
+// --- End of File ---

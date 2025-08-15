@@ -1,0 +1,776 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="_GLTF">
+      <UniqueIdentifier>{7c522005-1a27-44f0-980e-c92467d89ffd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_GLTF\include">
+      <UniqueIdentifier>{56eaa504-03a0-4beb-8115-6687a2bc7c40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_GLTF\libs">
+      <UniqueIdentifier>{9617b942-47ac-469d-89de-52deb5ddfea4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_GLTF\libs\debug">
+      <UniqueIdentifier>{f688b8c3-1a28-46d3-bf02-d7f4a310d833}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_GLTF\src">
+      <UniqueIdentifier>{96f730ab-f768-4b95-85ec-3a13e50dd423}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_ProtoLibs">
+      <UniqueIdentifier>{bb5fc7e4-07e3-48a8-92fa-1dc3080e5758}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_ProtoLibs\debug">
+      <UniqueIdentifier>{c95b2e41-8736-482e-82a7-1f36f0262fcb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Converter">
+      <UniqueIdentifier>{fa55fc3a-3bf1-4229-ad48-9c05c6d7f33f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GLTF">
+      <UniqueIdentifier>{aa718933-98a9-4ed4-a015-09b773d2b459}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Hash">
+      <UniqueIdentifier>{d6ef0e90-80af-4180-b3da-7c448cd24670}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Sphere">
+      <UniqueIdentifier>{38583523-e7d5-4054-8a84-ac5cf5cd9990}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Anim">
+      <UniqueIdentifier>{d52183e6-70c0-47b7-97de-de50630b9ea5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Mesh">
+      <UniqueIdentifier>{7627af6e-0f4e-40e9-aafa-361717f6eaaa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Texture">
+      <UniqueIdentifier>{fa6f65a0-9132-4007-b23b-a85b687cbe18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\XML">
+      <UniqueIdentifier>{e53474b1-8079-4516-951c-605a47fb3153}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PugiXml">
+      <UniqueIdentifier>{e59a071f-2f1c-434a-8f41-22cd1ce552d2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\GLTF\include\json.hpp">
+      <Filter>_GLTF\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GLTF\include\stb_image.h">
+      <Filter>_GLTF\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GLTF\include\stb_image_write.h">
+      <Filter>_GLTF\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GLTF\include\tiny_gltf.h">
+      <Filter>_GLTF\include</Filter>
+    </ClInclude>
+    <ClInclude Include="GLTF.h">
+      <Filter>Source Files\GLTF</Filter>
+    </ClInclude>
+    <ClInclude Include="GLTF_Helper.h">
+      <Filter>Source Files\GLTF</Filter>
+    </ClInclude>
+    <ClInclude Include="meshDataConverter.h">
+      <Filter>Source Files\Converter</Filter>
+    </ClInclude>
+    <ClInclude Include="textureDataConverter.h">
+      <Filter>Source Files\Converter</Filter>
+    </ClInclude>
+    <ClInclude Include="vboDataConverter.h">
+      <Filter>Source Files\Converter</Filter>
+    </ClInclude>
+    <ClInclude Include="BoundingSphere.h">
+      <Filter>Source Files\Sphere</Filter>
+    </ClInclude>
+    <ClInclude Include="md5.h">
+      <Filter>Source Files\Hash</Filter>
+    </ClInclude>
+    <ClInclude Include="Anim.h">
+      <Filter>Source Files\Anim</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvertAnim.h">
+      <Filter>Source Files\Anim</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvertMesh.h">
+      <Filter>Source Files\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateTexture.h">
+      <Filter>Source Files\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvertXML.h">
+      <Filter>Source Files\XML</Filter>
+    </ClInclude>
+    <ClInclude Include="CubeMesh.h">
+      <Filter>Source Files\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="PyramidMesh.h">
+      <Filter>Source Files\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="SphereMesh.h">
+      <Filter>Source Files\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteMesh.h">
+      <Filter>Source Files\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PugiXml\include\pugixml.hpp">
+      <Filter>PugiXml</Filter>
+    </ClInclude>
+    <ClInclude Include="Skeleton.h">
+      <Filter>Source Files\Anim</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvertSkeleton.h">
+      <Filter>Source Files\Anim</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvertSkin.h">
+      <Filter>Source Files\Anim</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvertJoint.h">
+      <Filter>Source Files\Anim</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvertHierarchy.h">
+      <Filter>Source Files\Anim</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\GLTF\libs\debug\tinygltf.lib">
+      <Filter>_GLTF\libs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_bad_any_cast_impl.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_bad_optional_access.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_bad_variant_access.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_base.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_city.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_civil_time.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_cord.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_cord_internal.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_cordz_functions.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_cordz_handle.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_cordz_info.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_cordz_sample_token.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_crc_cord_state.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_crc_cpu_detect.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_crc_internal.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_crc32c.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_debugging_internal.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_decode_rust_punycode.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_demangle_internal.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_demangle_rust.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_die_if_null.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_examine_stack.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_exponential_biased.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_failure_signal_handler.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_flags_commandlineflag.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_flags_commandlineflag_internal.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_flags_config.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_flags_internal.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_flags_marshalling.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_flags_parse.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_flags_private_handle_accessor.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_flags_program_name.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_flags_reflection.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_flags_usage.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_flags_usage_internal.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_graphcycles_internal.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_hash.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_hashtablez_sampler.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_int128.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_kernel_timeout_internal.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_leak_check.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_log_entry.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_log_flags.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_log_globals.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_log_initialize.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_log_internal_check_op.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_log_internal_conditions.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_log_internal_fnmatch.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_log_internal_format.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_log_internal_globals.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_log_internal_log_sink_set.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_log_internal_message.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_log_internal_nullguard.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_log_internal_proto.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_log_severity.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_log_sink.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_low_level_hash.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_malloc_internal.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_periodic_sampler.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_poison.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_random_distributions.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_random_internal_distribution_test_util.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_random_internal_platform.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_random_internal_pool_urbg.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_random_internal_randen.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_random_internal_randen_hwaes.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_random_internal_randen_hwaes_impl.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_random_internal_randen_slow.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_random_internal_seed_material.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_random_seed_gen_exception.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_random_seed_sequences.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_raw_hash_set.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_raw_logging_internal.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_scoped_set_env.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_spinlock_wait.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_stacktrace.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_status.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_statusor.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_str_format_internal.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_strerror.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_string_view.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_strings.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_strings_internal.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_symbolize.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_synchronization.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_throw_delegate.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_time.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_time_zone.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_utf8_for_code_point.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\absl_vlog_config_internal.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\libprotobuf-lited.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\utf8_range.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+    <Library Include="..\Proto\libs\debug\utf8_validity.lib">
+      <Filter>_ProtoLibs\debug</Filter>
+    </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\GLTF\src\tiny_gltf.cc">
+      <Filter>_GLTF\src</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GLTF.cpp">
+      <Filter>Source Files\GLTF</Filter>
+    </ClCompile>
+    <ClCompile Include="GLTF_Helper.cpp">
+      <Filter>Source Files\GLTF</Filter>
+    </ClCompile>
+    <ClCompile Include="meshDataConverter.cpp">
+      <Filter>Source Files\Converter</Filter>
+    </ClCompile>
+    <ClCompile Include="textureDataConverter.cpp">
+      <Filter>Source Files\Converter</Filter>
+    </ClCompile>
+    <ClCompile Include="vboDataConverter.cpp">
+      <Filter>Source Files\Converter</Filter>
+    </ClCompile>
+    <ClCompile Include="BoundingSphere.cpp">
+      <Filter>Source Files\Sphere</Filter>
+    </ClCompile>
+    <ClCompile Include="md5.cpp">
+      <Filter>Source Files\Hash</Filter>
+    </ClCompile>
+    <ClCompile Include="Anim.cpp">
+      <Filter>Source Files\Anim</Filter>
+    </ClCompile>
+    <ClCompile Include="ConvertAnim.cpp">
+      <Filter>Source Files\Anim</Filter>
+    </ClCompile>
+    <ClCompile Include="ConvertMesh.cpp">
+      <Filter>Source Files\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="CreateTexture.cpp">
+      <Filter>Source Files\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="ConvertXML.cpp">
+      <Filter>Source Files\XML</Filter>
+    </ClCompile>
+    <ClCompile Include="CubeMesh.cpp">
+      <Filter>Source Files\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="PyramidMesh.cpp">
+      <Filter>Source Files\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="SphereMesh.cpp">
+      <Filter>Source Files\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteMesh.cpp">
+      <Filter>Source Files\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PugiXml\src\pugixml.cpp">
+      <Filter>PugiXml</Filter>
+    </ClCompile>
+    <ClCompile Include="Skeleton.cpp">
+      <Filter>Source Files\Anim</Filter>
+    </ClCompile>
+    <ClCompile Include="ConvertSkeleton.cpp">
+      <Filter>Source Files\Anim</Filter>
+    </ClCompile>
+    <ClCompile Include="ConvertSkin.cpp">
+      <Filter>Source Files\Anim</Filter>
+    </ClCompile>
+    <ClCompile Include="ConvertJoint.cpp">
+      <Filter>Source Files\Anim</Filter>
+    </ClCompile>
+    <ClCompile Include="ConvertHierarchy.cpp">
+      <Filter>Source Files\Anim</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Proto\libs\debug\absl_bad_any_cast_impl.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_bad_optional_access.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_bad_variant_access.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_base.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_city.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_civil_time.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_cord.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_cord_internal.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_cordz_functions.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_cordz_handle.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_cordz_info.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_cordz_sample_token.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_crc_cord_state.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_crc_cpu_detect.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_crc_internal.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_crc32c.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_debugging_internal.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_decode_rust_punycode.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_demangle_internal.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_demangle_rust.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_die_if_null.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_examine_stack.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_exponential_biased.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_failure_signal_handler.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_flags_commandlineflag.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_flags_commandlineflag_internal.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_flags_config.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_flags_internal.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_flags_marshalling.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_flags_parse.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_flags_private_handle_accessor.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_flags_program_name.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_flags_reflection.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_flags_usage.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_flags_usage_internal.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_graphcycles_internal.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_hash.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_hashtablez_sampler.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_int128.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_kernel_timeout_internal.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_leak_check.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_log_entry.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_log_flags.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_log_globals.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_log_initialize.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_log_internal_check_op.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_log_internal_conditions.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_log_internal_fnmatch.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_log_internal_format.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_log_internal_globals.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_log_internal_log_sink_set.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_log_internal_message.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_log_internal_nullguard.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_log_internal_proto.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_log_severity.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_log_sink.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_low_level_hash.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_malloc_internal.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_periodic_sampler.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_poison.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_random_distributions.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_random_internal_distribution_test_util.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_random_internal_platform.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_random_internal_pool_urbg.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_random_internal_randen.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_random_internal_randen_hwaes.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_random_internal_randen_hwaes_impl.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_random_internal_randen_slow.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_random_internal_seed_material.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_random_seed_gen_exception.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_random_seed_sequences.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_raw_hash_set.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_raw_logging_internal.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_scoped_set_env.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_spinlock_wait.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_stacktrace.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_status.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_statusor.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_str_format_internal.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_strerror.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_string_view.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_strings.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_strings_internal.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_symbolize.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_synchronization.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_throw_delegate.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_time.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_time_zone.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_utf8_for_code_point.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\absl_vlog_config_internal.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\libprotobuf-lited.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\utf8_range.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+    <None Include="..\Proto\libs\debug\utf8_validity.pdb">
+      <Filter>_ProtoLibs\debug</Filter>
+    </None>
+  </ItemGroup>
+</Project>
