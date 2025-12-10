@@ -1,13 +1,13 @@
 # Game Engine
 
-A comprehensive C++ game engine built with DirectX 11, featuring a modular architecture with custom libraries and external dependencies.
+A comprehensive C++ graphics engine built with DirectX 11, featuring a modular architecture with custom libraries and external dependencies.
 
 **Author:** Jessa Gillespie  
 **Copyright:** 2025, Jessa Gillespie, all rights reserved.
 
 ## Overview
 
-This game engine is a large-scale C++ project that provides a complete framework for 3D game development. It includes custom-built libraries for mathematics, file I/O, memory management, and asset processing, along with integration of industry-standard external libraries.
+This graphics engine is a large-scale C++ project that provides a complete framework for 3D graphics development. It includes custom-built libraries for mathematics, file I/O, memory management, and asset processing, along with integration of industry-standard external libraries.
 
 ## Project Structure
 
