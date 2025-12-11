@@ -28,7 +28,8 @@ namespace Azul
 
 	// Todo: clean up
 	AnimController *pAnimController;
-	FontSprite *pFontSprite1;
+	AnimController* pAnimControllerRigid;
+	FontSprite* pFontSprite1;
 
 	//-----------------------------------------------------------------------------
 	//  Game::Game()
@@ -120,31 +121,37 @@ namespace Azul
 		//   Mesh 
 		// --------------------------------
 
+		MeshNodeMan::Add("spritemesh.m.proto.azul", Mesh::Name::SPRITE);
 		MeshNodeMan::Add("silly_dancing.m.proto.azul", Mesh::Name::Dancing);
+		MeshNodeMan::Add("chickenbot.m.proto.azul", Mesh::Name::ChickenBot);
 
 		// --------------------------------
 		//   Joint
 		// --------------------------------
 
 		JointTableMan::Add("silly_dancing.j.proto.azul", JointTable::Name::Dancing);
+		JointTableMan::Add("chickenbot.j.proto.azul", JointTable::Name::ChickenBot);
 
 		// --------------------------------
 		//   Hierarchy
 		// --------------------------------
 
 		HierarchyTableMan::Add("silly_dancing.h.proto.azul", HierarchyTable::Name::Dancing);
+		HierarchyTableMan::Add("chickenbot.h.proto.azul", HierarchyTable::Name::ChickenBot);
 
 		// --------------------------------
 		//   Skeleton
 		// --------------------------------
 
 		SkelMan::Add("silly_dancing.s.proto.azul", Skel::Name::Dancing);
+		SkelMan::Add("chickenbot.s.proto.azul", Skel::Name::ChickenBot);
 
 		// --------------------------------
 		//   Clip
 		// --------------------------------
 
 		ClipMan::Add("silly_dancing.a.proto.azul", Clip::Name::Dancing, Skel::Name::Dancing);
+		ClipMan::Add("chickenbot.a.proto.azul", Clip::Name::Walk_ChickenBot, Skel::Name::ChickenBot);
 
 		// --------------------------------
 		//  Shader
@@ -166,16 +173,19 @@ namespace Azul
 		// --------------------------------
 
 		TexNodeMan::Add("silly_dancing.t.proto.azul", TextureObject::Name::Dancing);
+		TexNodeMan::Add("chickenbot.t.proto.azul", TextureObject::Name::ChickenBot);
+		TexNodeMan::Add("red_alien.t.proto.azul", TextureObject::Name::RedAlien);
 
 		// -----------------------------------
 		//  Image
 		// -----------------------------------
+		ImageMan::Add(Image::Name::RedAlien, TextureObject::Name::RedAlien, Rect(0.0f, 0.0f, 440.f, 320.0f));
 
 		// ---------------------------------------------
 		//  Font - load xml
 		// ---------------------------------------------
-		//TexNodeMan::Add("FontArial36.t.proto.azul", TextureObject::Name::FontAriel36);
-		//GlyphMan::Add("MetricsArial36.xml.proto.azul", TextureObject::Name::FontAriel36);
+		TexNodeMan::Add("FontArial36.t.proto.azul", TextureObject::Name::FontArial36);
+		GlyphMan::Add("MetricsArial36.xml.proto.azul", TextureObject::Name::FontArial36);
 
 
 		// ------------------------------------------------
@@ -185,17 +195,47 @@ namespace Azul
 		// Anim needs skeleton
 		//		po - pointer owned
 		//		pt - pointer transient being owned by someone else to own
+		Color color(0.0f, 0.0f, 0.0f, 1.0f);
 		Vec3 poLightPos = Vec3(1.0f, 1.0f, 1.0f);
 		Vec3 poLightColor = Vec3(200.0f, 50.0f, 50.0f);
 
-		//dancing
+		//demo font
 		{
-			HierarchyTable* pHierarchyTable = HierarchyTableMan::Find(HierarchyTable::Name::Dancing);
+			GraphicsObject* pGraphicsFont = new GraphicsObject_Sprite(
+				Mesh::Name::SPRITE,
+				ShaderObject::Name::Sprite,
+				Image::Name::Not_Initialized,
+				Rect(100, 100, 100, 100));
+			
+			pFontSprite1 = new FontSprite(pGraphicsFont);
+			GameObjectMan::Add(pFontSprite1, GameObjectMan::GetRoot());
+			
+			pFontSprite1->Set(FontSprite::Name::TestMessage,
+				"h e l l o",
+				Glyph::Name::Arial36pt,
+				100.0f,
+				100.0f,
+				color);
+		}
 
-			Skeleton* ptSkeleton = new Skeleton(Clip::Name::Dancing);
+		//demo sprite
+		{
+			GraphicsObject* pGraphicsSprite = new GraphicsObject_Sprite(
+				Mesh::Name::SPRITE,
+				ShaderObject::Name::Sprite,
+				Image::Name::RedAlien,
+				Rect(600, 400, 220.0f, 160.0f));
+			Sprite* pSprite = new Sprite(pGraphicsSprite);
+			GameObjectMan::Add(pSprite, GameObjectMan::GetRoot());
+		}
+
+		//demo rigid body
+		{				
+			//anim setup
+			HierarchyTable* pHierarchyTable = HierarchyTableMan::Find(HierarchyTable::Name::ChickenBot);
+			Skeleton* ptSkeleton = new Skeleton(Clip::Name::Walk_ChickenBot);
 			assert(ptSkeleton);
 
-			// Setup Compute shaders data
 			Mixer* ptMixer = new Mixer(ptSkeleton->GetClip());
 			assert(ptMixer);
 
@@ -205,28 +245,70 @@ namespace Azul
 			Anim* ptAnim = new Anim(ptSkeleton, ptMixer);
 			assert(ptAnim);
 
+			//mesh setup
+			GraphicsObject_SkinFlatTexture* pGraphicsRigid = new GraphicsObject_SkinFlatTexture(
+				Mesh::Name::ChickenBot,
+				ShaderObject::Name::SkinFlatTexture,
+				TextureObject::Name::ChickenBot,
+				ptMixer,
+				ptWorldCompute);
+
+			GameObjectAnimSkin* pGameAnimRigid = new GameObjectAnimSkin(pGraphicsRigid, ptMixer, ptWorldCompute);
+			pGameAnimRigid->SetName("ChickenBot");
+			pGameAnimRigid->SetScale(1000.0f, 1000.0f, 1000.0f);
+			pGameAnimRigid->SetTrans(100.0f, 0.0f, 0.0f);
+			pGameAnimRigid->cur_rot_y = 180.0f;
+			pGameAnimRigid->poQuat->set(0.0f, 1.0f, 0.0f, 0.0f);
+			GameObjectMan::Add(pGameAnimRigid, GameObjectMan::GetRoot());
+
+			AnimTime delta(AnimTime::Duration::FILM_24_FRAME);
+			pAnimControllerRigid = new AnimController(ptAnim, 0.2f * delta);
+			assert(pAnimControllerRigid);
+		}
+
+		//demo procedural mesh generation
+		{
+
+		}
+
+		//demo skinned mesh
+		{
+			HierarchyTable* pHierarchyTable1 = HierarchyTableMan::Find(HierarchyTable::Name::Dancing);
+
+			Skeleton* ptSkeleton1 = new Skeleton(Clip::Name::Dancing);
+			assert(ptSkeleton1);
+
+			// Setup Compute shaders data
+			Mixer* ptMixer1 = new Mixer(ptSkeleton1->GetClip());
+			assert(ptMixer1);
+
+			WorldCompute* ptWorldCompute1 = new WorldCompute(ptMixer1, pHierarchyTable1);
+			assert(ptWorldCompute1);
+
+			Anim* ptAnim1 = new Anim(ptSkeleton1, ptMixer1);
+			assert(ptAnim1);
+
 			// Skin Mesh
-			GameObjectAnimSkin* pGameSkin;
-			GraphicsObject_SkinLightTexture* pGraphicsSkin;
+			GameObjectAnimSkin* pGameSkin1;
+			GraphicsObject_SkinLightTexture* pGraphicsSkin1;
 
-
-			pGraphicsSkin = new GraphicsObject_SkinLightTexture(Mesh::Name::Dancing,
+			pGraphicsSkin1 = new GraphicsObject_SkinLightTexture(Mesh::Name::Dancing,
 				ShaderObject::Name::SkinLightTexture,
 				TextureObject::Name::Dancing,
-				ptMixer,
-				ptWorldCompute,
+				ptMixer1,
+				ptWorldCompute1,
 				poLightPos,
 				poLightColor);
 
-			pGameSkin = new GameObjectAnimSkin(pGraphicsSkin, ptMixer, ptWorldCompute);
-			pGameSkin->SetName("Dancing");
-			//pGameSkin->delta_y = 0.005f;
-			pGameSkin->SetScale(100, 100, 100);
-			pGameSkin->SetTrans(0, -25, 0);
-			GameObjectMan::Add(pGameSkin, GameObjectMan::GetRoot());
+			pGameSkin1 = new GameObjectAnimSkin(pGraphicsSkin1, ptMixer1, ptWorldCompute1);
+			pGameSkin1->SetName("Dancing");
+			//pGameSkin1->delta_y = 0.005f;
+			pGameSkin1->SetScale(100, 100, 100);
+			pGameSkin1->SetTrans(0, -25, 0);
+			GameObjectMan::Add(pGameSkin1, GameObjectMan::GetRoot());
 
 			AnimTime delta(AnimTime::Duration::FILM_24_FRAME);
-			pAnimController = new AnimController(ptAnim, 0.2f * delta);
+			pAnimController = new AnimController(ptAnim1, 0.2f * delta);
 			assert(pAnimController);
 		}
 
@@ -278,6 +360,10 @@ namespace Azul
 		{
 			pAnimController->Update();
 		}
+		if (pAnimControllerRigid)
+		{
+			pAnimControllerRigid->Update();
+		}
 
 		// ------------------------------------
 		// Update GameObjects
@@ -320,8 +406,7 @@ namespace Azul
 		DirectXDeviceMan::Destroy();
 
 		delete pAnimController;
-
-		//delete pFontSprite1;
+		delete pAnimControllerRigid;
 
 
 	}
@@ -335,7 +420,7 @@ namespace Azul
 	void Game::ClearDepthStencilBuffer()
 	{
 #ifdef _DEBUG
-		const Vec4 ClearColor = WindowColors::Black;
+		const Vec4 ClearColor = WindowColors::White;
 #else
 		const Vec4 ClearColor = WindowColors::Wheat;
 #endif

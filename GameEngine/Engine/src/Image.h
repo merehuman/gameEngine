@@ -18,6 +18,7 @@ namespace Azul
 		enum Name
 		{
 			Mousey,
+			RedAlien,
 			Not_Initialized,
 		};
 

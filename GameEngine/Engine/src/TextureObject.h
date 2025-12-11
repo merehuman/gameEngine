@@ -28,6 +28,7 @@ namespace Azul
 		ChickenBot,
 		Mousey,
 		Elf,
+		RedAlien,
 		Sitting,
 		Talking,
 		Excited,
@@ -39,7 +40,7 @@ namespace Azul
 		Test1,
 		Test2,
 		Test3,
-		FontAriel36,
+		FontArial36,
 		Uninitialized
 	};
 

@@ -31,29 +31,31 @@ int main()
 	GOOGLE_PROTOBUF_VERIFY_VERSION;
 
 	//font
-	//CreateTexturePNG("FontArial36.png", "FontArial36");
-	//ConvertXML("MetricsArial36.xml", "MetricsArial36");
+	CreateTexturePNG("FontArial36.png", "FontArial36");
+	ConvertXML("MetricsArial36.xml", "MetricsArial36");
+
+	//sprite 
+	CreateSpriteMesh();
+	CreateTexturePNG("red_si.png", "Red_Alien");
 
 	//export json
 	//char *poJSON = GLTF::ExportJSON("silly_dancing.glb");
 
 	//dancing
-	ConvertJoint("silly_dancing.glb", "silly_dancing");
-	ConvertSkin("silly_dancing.glb", "silly_dancing");
-	ConvertSkeleton("silly_dancing.glb", "silly_dancing");
-	ConvertHierarchy("silly_dancing.glb", "silly_dancing");
-	ConvertAnim("silly_dancing.glb", "silly_dancing");
-	CreateTexturePNG("silly_dancing.png", "silly_dancing");
+	//ConvertJoint("silly_dancing.glb", "silly_dancing");
+	//ConvertSkin("silly_dancing.glb", "silly_dancing");
+	//ConvertSkeleton("silly_dancing.glb", "silly_dancing");
+	//ConvertHierarchy("silly_dancing.glb", "silly_dancing");
+	//ConvertAnim("silly_dancing.glb", "silly_dancing");
+	//CreateTexturePNG("silly_dancing.png", "silly_dancing");
 
-	//disco ball
-	ConvertMesh("disco-ball.glb", "disco_ball");
-	//ConvertAnim("disco-ball.glb", "disco_ball");
-	//CreateTexturePNG("disco-ball.glb", "disco_ball");
-
-	//dance floor
-	ConvertMesh("dancefloor.glb", "dance_floor");
-	//ConvertAnim("dancefloor.glb", "dance_floor");
-	CreateTexturePNG("pattern-light2_4.png", "dance_floor");
+	//walking
+	CreateTexturePNG("ChickenBotDiffuse.png", "ChickenBot");
+	ConvertJoint("walk+mesh.glb", "ChickenBot");
+	ConvertSkin("walk+mesh.glb", "ChickenBot");
+	ConvertSkeleton("walk+mesh.glb", "ChickenBot");
+	ConvertHierarchy("walk+mesh.glb", "ChickenBot");
+	ConvertAnim("walk+mesh.glb", "ChickenBot");
 
 
 
